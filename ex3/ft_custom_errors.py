@@ -25,7 +25,9 @@ def error(err_no: int) -> None:
         raise GardenError("the tomato plant is wilting!")
     if err_no == 3:
         raise GardenError("Not enough water in the tank!")
-    print ("toujours la")
+    if err_no == 4:
+        raise GardenError()
+
 
 def test_errors() -> None:
     print("=== Custom Garden Errors Demo ===")
