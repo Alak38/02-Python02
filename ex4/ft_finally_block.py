@@ -10,8 +10,7 @@ class PlantError(Exception):
 def water_plant(plant_name: str) -> None:
     if not plant_name == plant_name.capitalize():
         raise PlantError(f"invalid plant name to water: '{plant_name}'")
-    else:
-        print(f"Watering {plant_name} : [OK]")
+    print(f"Watering {plant_name} : [OK]")
 
 
 def test_watering_system(plants: list[str]) -> None:
