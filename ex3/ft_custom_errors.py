@@ -1,43 +1,34 @@
 class GardenError(Exception):
-    def __init__(self: GardenError, message: str) -> None:
+    def __init__(self, message: str = "Unknown plant error") -> None:
         super().__init__(message)
         self.message = message
         self.plant = PlantError(message)
         self.water = WaterError(message)
 
-    def __str__(self) -> str:
-        return f"{self.message}"
-
 
 class PlantError(GardenError):
-    def __init__(self: PlantError, message: str) -> None:
+    def __init__(self, message: str) -> None:
         self.message = message
-
-    def __str__(self) -> str:
-        return f"{self.message}"
 
 
 class WaterError(GardenError):
-    def __init__(self: WaterError, message: str) -> None:
+    def __init__(self, message: str) -> None:
         self.message = message
-
-    def __str__(self) -> str:
-        return f"{self.message}"
 
 
 def error(err_no: int) -> None:
     if err_no == 0:
-        raise PlantError("the tomato plant is wilting")
+        raise PlantError("the tomato plant is wilting!")
     if err_no == 1:
-        raise WaterError("Not enough water in the tank")
+        raise WaterError("Not enough water in the tank!")
     if err_no == 2:
-        raise GardenError("the tomato plant is wilting")
+        raise GardenError("the tomato plant is wilting!")
     if err_no == 3:
-        raise GardenError("Not enough water in the tank")
-
+        raise GardenError("Not enough water in the tank!")
+    print ("toujours la")
 
 def test_errors() -> None:
-    print("Custom Garden Errors Demo")
+    print("=== Custom Garden Errors Demo ===")
     titles = ["PlantError", "WaterError", "catching all garden errors"]
     x = 0
     for type in titles:

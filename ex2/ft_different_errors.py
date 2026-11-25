@@ -12,7 +12,7 @@ def garden_operations(operation_number: int) -> None:
 
 
 def test_error_types() -> None:
-    print("Garden Errors Types Demo")
+    print("=== Garden Errors Types Demo ===")
     for x in range(5):
         print(f"Testing operation {x}...")
         try:
